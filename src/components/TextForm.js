@@ -88,36 +88,36 @@ export default function TextForm(props) {
         <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'grey':'white', color: props.mode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
         </div>
 
-        <button className="btn btn-primary mx-1" onClick={btn_call}>
+        <button className="btn btn-primary mx-1 my-1" onClick={btn_call}>
           Convert To UpperCase
         </button>
 
-        <button className="btn btn-primary mx-1" onClick={btn_call_2}>
+        <button className="btn btn-primary mx-1 my-1" onClick={btn_call_2}>
           Convert To LowerCase
         </button>
 
-        <button className="btn btn-primary mx-1" onClick={btn_call_3}>
+        <button className="btn btn-primary mx-1 my-1" onClick={btn_call_3}>
           Clear The Text
         </button>
 
         {/* i want to one button for clipboard copy */}
-        <button className="btn btn-primary mx-1" onClick={btn_call_4}>
+        <button className="btn btn-primary mx-1 my-1" onClick={btn_call_4}>
           Copy To Clipboard
         </button>
 
         {/* i want to toggleCase button */}
 
-        <button className="btn btn-primary mx-1" onClick={btn_call_5}>
+        <button className="btn btn-primary mx-1 my-1" onClick={btn_call_5}>
           Toggle Case
         </button>
 
         {/* //i want to read the text after click on button */}
 
-        <button className="btn btn-primary mx-1" onClick={btn_call_6}>
+        <button className="btn btn-primary mx-1 my-1" onClick={btn_call_6}>
           Read Text
         </button>
 
-        <button className="btn btn-primary mx-1" onClick={btn_call_7}>
+        <button className="btn btn-primary mx-1 my-1" onClick={btn_call_7}>
           Remove Extra Space
         </button>
 
@@ -141,7 +141,9 @@ export default function TextForm(props) {
       <div className="container my-3" style={{color: props.mode==='dark'?'white':'#042743'}}>
         <h2>Your Text Summary</h2>
         <p>
-          {text.split(" ").length} words and {text.length} characters
+          {text.split(" ").filter((ele) => {
+            return ele.length !== 0;
+          }).length} words and {text.length} characters
         </p>
         <p>{0.008 * text.split(" ").length} Minutes Read</p>
         <h2>Preview</h2>

@@ -1,87 +1,65 @@
-
-
-
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 export default function About({ mode }) {
+  const [darkMode, setDarkMode] = useState(false);
+  // const [btnText, setBtnText] = useState("Enable Dark Mode");
+  // const [btnColor, setBtnColor] = useState("btn-primary");
 
-    const [darkMode, setDarkMode] = useState(false);
-    // const [btnText, setBtnText] = useState("Enable Dark Mode");
-    // const [btnColor, setBtnColor] = useState("btn-primary");
+  useEffect(() => {
+    setDarkMode(mode === "dark");
+    // setBtnText(mode === 'dark' ? 'Enable Light Mode' : 'Enable Dark Mode');
+    // setBtnColor(mode === 'dark' ? 'btn-dark' : 'btn-primary');
+  }, [mode]);
 
+  // const toggleDarkMode = () => {
+  //   setDarkMode(!darkMode);
+  //   setBtnText(darkMode ? "Enable Dark Mode" : "Enable Light Mode");
+  //   setBtnColor(darkMode ? "btn-primary" : "btn-dark");
+  // };
 
-    useEffect(() => {
-      setDarkMode(mode === 'dark');
-      // setBtnText(mode === 'dark' ? 'Enable Light Mode' : 'Enable Dark Mode');
-      // setBtnColor(mode === 'dark' ? 'btn-dark' : 'btn-primary');
-    }, [mode]);
-  
-    // const toggleDarkMode = () => {
-    //   setDarkMode(!darkMode);
-    //   setBtnText(darkMode ? "Enable Dark Mode" : "Enable Light Mode");
-    //   setBtnColor(darkMode ? "btn-primary" : "btn-dark");
-    // };
-  
-    const myStyle = {
-      color: darkMode ? 'white' : 'black',
-      backgroundColor: darkMode ? 'black' : 'white',
-      border: darkMode ? '1px solid white' : 'none',
-    };
+  const myStyle = {
+    color: darkMode ? "white" : "#042743",
+    backgroundColor: darkMode ? "#042743" : "white",
+    border: darkMode ? "1px solid white" : "none",
+   
+  };
 
+  // const [myStyle, setMyStyle] = useState({
+  //     color: 'black',
+  //     backgroundColor: 'white'
+  // })
 
+  // const [btnText, setBtnText] = useState("Enable Dark Mode")
 
+  // const btn_click = () => {
+  //     if(myStyle.color === 'black'){
+  //         setMyStyle({
+  //             color: 'white',
+  //             backgroundColor: 'black',
+  //             border: '1px solid white'
+  //         })
+  //         setBtnText("Enable Light Mode")
+  //     }
+  //     else{
+  //         setMyStyle({
+  //             color: 'black',
+  //             backgroundColor: 'white'
+  //         })
+  //         setBtnText("Enable Dark Mode")
+  //     }
+  // }
 
-
-    // const [myStyle, setMyStyle] = useState({
-    //     color: 'black',
-    //     backgroundColor: 'white'
-    // })
-
-    // const [btnText, setBtnText] = useState("Enable Dark Mode")
-
-    // const btn_click = () => {
-    //     if(myStyle.color === 'black'){
-    //         setMyStyle({
-    //             color: 'white',
-    //             backgroundColor: 'black',
-    //             border: '1px solid white'
-    //         })
-    //         setBtnText("Enable Light Mode")
-    //     }
-    //     else{
-    //         setMyStyle({
-    //             color: 'black',
-    //             backgroundColor: 'white'
-    //         })
-    //         setBtnText("Enable Dark Mode")
-    //     }
-    // }
-
-    
-
-
-
-
-
-
-    // let myStyle = {
-    //     color: 'white',
-    //     backgroundColor: 'black'
-    // }
-
-
+  // let myStyle = {
+  //     color: 'white',
+  //     backgroundColor: 'black'
+  // }
 
   return (
     <>
-
-
-
-
-
       <div className="container" style={myStyle}>
-        <h2 className="my-3">About us</h2>
+        <h2 className="my-3">About Us</h2>
 
-        <div className="accordion" id="accordionExample"   style={myStyle}>
+        <div className="accordion" id="accordionExample" style={myStyle}>
           <div className="accordion-item" style={myStyle}>
             <h2 className="accordion-header">
               <button
@@ -93,7 +71,7 @@ export default function About({ mode }) {
                 aria-controls="collapseOne"
                 style={myStyle}
               >
-                Accordion Item #1
+               <strong>Analyze Your Text</strong> 
               </button>
             </h2>
             <div
@@ -103,15 +81,12 @@ export default function About({ mode }) {
               style={myStyle}
             >
               <div className="accordion-body">
-                <strong>This is the first item's accordion body.</strong> It is
-                shown by default, until the collapse plugin adds the appropriate
-                classes that we use to style each element. These classes control
-                the overall appearance, as well as the showing and hiding via
-                CSS transitions. You can modify any of this with custom CSS or
-                overriding our default variables. It's also worth noting that
-                just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                At TextUtils, we understand the power of words. Our platform
+                empowers you to analyze your text with precision and ease.
+                Whether you're fine-tuning your writing, checking for
+                grammatical errors, or examining the sentiment of your content,
+                we've got you covered. Explore the vast array of text analysis
+                tools at your fingertips.
               </div>
             </div>
           </div>
@@ -126,7 +101,7 @@ export default function About({ mode }) {
                 aria-controls="collapseTwo"
                 style={myStyle}
               >
-                Accordion Item #2
+               <strong>Free to Use</strong> 
               </button>
             </h2>
             <div
@@ -136,15 +111,12 @@ export default function About({ mode }) {
               style={myStyle}
             >
               <div className="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classes that we use to style each element. These
-                classes control the overall appearance, as well as the showing
-                and hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth
-                noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                TextUtils is committed to making advanced text analysis
+                accessible to everyone. That's why we believe in keeping our
+                services free to use. No subscriptions, no hidden fees – just a
+                straightforward and user-friendly experience for all your
+                text-related needs. Enjoy the freedom to analyze and enhance
+                your content without any cost barriers.
               </div>
             </div>
           </div>
@@ -159,7 +131,7 @@ export default function About({ mode }) {
                 aria-controls="collapseThree"
                 style={myStyle}
               >
-                Accordion Item #3
+               <strong>Browser Compatible</strong> 
               </button>
             </h2>
             <div
@@ -169,15 +141,12 @@ export default function About({ mode }) {
               style={myStyle}
             >
               <div className="accordion-body" style={myStyle}>
-                <strong>This is the third item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classes that we use to style each element. These
-                classes control the overall appearance, as well as the showing
-                and hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth
-                noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                We understand the importance of flexibility. TextUtils is
+                designed to be seamlessly compatible with various browsers.
+                Whether you prefer Chrome, Firefox, Safari, or any other
+                browser, you can count on a consistent and reliable experience.
+                Analyze your text anytime, anywhere, without worrying about
+                compatibility issues.
               </div>
             </div>
           </div>
