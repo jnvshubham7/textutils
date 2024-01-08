@@ -83,41 +83,41 @@ export default function TextForm(props) {
     <>
      <div className="container" style={{color: props.mode==='dark'?'white':'#042743'}}>
 
-        <h1>{props.heading}</h1>
+        <h1 className='mb-4'> {props.heading}</h1>
         <div className="mb-3">
-        <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'grey':'white', color: props.mode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
+        <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'#13466e':'white', color: props.mode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
         </div>
 
-        <button className="btn btn-primary mx-1 my-1" onClick={btn_call}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={btn_call}>
           Convert To UpperCase
         </button>
 
-        <button className="btn btn-primary mx-1 my-1" onClick={btn_call_2}>
+        <button   disabled={text.length===0}  className="btn btn-primary mx-1 my-1" onClick={btn_call_2}>
           Convert To LowerCase
         </button>
 
-        <button className="btn btn-primary mx-1 my-1" onClick={btn_call_3}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={btn_call_3}>
           Clear The Text
         </button>
 
         {/* i want to one button for clipboard copy */}
-        <button className="btn btn-primary mx-1 my-1" onClick={btn_call_4}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={btn_call_4}>
           Copy To Clipboard
         </button>
 
         {/* i want to toggleCase button */}
 
-        <button className="btn btn-primary mx-1 my-1" onClick={btn_call_5}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={btn_call_5}>
           Toggle Case
         </button>
 
         {/* //i want to read the text after click on button */}
 
-        <button className="btn btn-primary mx-1 my-1" onClick={btn_call_6}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={btn_call_6}>
           Read Text
         </button>
 
-        <button className="btn btn-primary mx-1 my-1" onClick={btn_call_7}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={btn_call_7}>
           Remove Extra Space
         </button>
 
@@ -145,9 +145,11 @@ export default function TextForm(props) {
             return ele.length !== 0;
           }).length} words and {text.length} characters
         </p>
-        <p>{0.008 * text.split(" ").length} Minutes Read</p>
+        <p>{0.008 * text.split(" ").filter((ele) => {
+            return ele.length !== 0;
+          }).length} Minutes Read</p>
         <h2>Preview</h2>
-        <p>{text.length>0?text:"Enter something in the textbox above to preview it here"}</p>
+        <p>{text.length>0?text:"Nothing to preview!"}</p>
       </div>
     </>
   );
