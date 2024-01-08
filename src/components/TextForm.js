@@ -7,6 +7,7 @@ export default function TextForm(props) {
     // console.log("Uppercase was clicked" + text);
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to UpperCase", "success");
   };
 
   const btn_call_2 = () => {
@@ -15,15 +16,18 @@ export default function TextForm(props) {
     // console.log("Uppercase was clicked" + text);
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to LowerCase", "success");
   };
 
   const btn_call_3 = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("Text Cleared", "success");
   };
 
   const btn_call_4 = () => {
     navigator.clipboard.writeText(text);
+    props.showAlert("Copied to Clipboard", "success");
     // navigator.clipboard.writeText("Hello World");
   };
 
@@ -35,6 +39,8 @@ export default function TextForm(props) {
       })
       .join(" ");
     setText(newText);
+    props.showAlert("Converted to TitleCase", "success");
+
   };
 
   const btn_call_6 = () => {
@@ -46,12 +52,18 @@ export default function TextForm(props) {
     // Trigger speech synthesis inside a user-initiated event (e.g., button click)
     window.onclick = () => {
       window.speechSynthesis.speak(speech);
+
     };
+
+    props.showAlert("Reading Text", "success");
+
+
   };
 
   const btn_call_7 = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Removed Extra Spaces", "success");
   }
 
 
@@ -61,6 +73,7 @@ export default function TextForm(props) {
   const handleOnChange = (event) => {
     // console.log("On Change");
     setText(event.target.value);
+    
   };
 
   const [text, setText] = useState("");
