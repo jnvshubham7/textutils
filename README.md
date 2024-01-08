@@ -50,6 +50,4 @@ To get started with TextUtils, simply clone the repository and open the `index.h
 
 We welcome contributions! Feel free to open issues or pull requests to enhance the functionality or fix any bugs you may encounter.
 
-## License
 
-This project is licensed under the [MIT License](LICENSE).
