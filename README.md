@@ -1,6 +1,9 @@
 # TextUtils
 
 TextUtils is your go-to text manipulation and analysis tool, designed for users who need efficient and quick text processing. Whether you're a writer, a student, or anyone dealing with text, TextUtils is here to simplify your tasks and enhance your productivity.
+![image](https://github.com/jnvshubham7/TextUtils/assets/69629803/6926c1f0-8a35-4a87-ae69-2dcd012d631e)
+![image](https://github.com/jnvshubham7/TextUtils/assets/69629803/b974130c-6ea4-4ddf-89cf-e8b33c9e38b5)
+
 
 ## Key Features
 
