@@ -44,8 +44,9 @@ Bring your text to life with Speech Synthesis. Click a button, and TextUtils wil
 ### 6. Space Management
 Tidy up your text by removing extra spaces with a single click. TextUtils ensures that your text remains clean and well-formatted.
 
+<img src="https://github.com/jnvshubham7/TextUtils/assets/69629803/b974130c-6ea4-4ddf-89cf-e8b33c9e38b5" width="500" height="300" />
 
-![image](https://github.com/jnvshubham7/TextUtils/assets/69629803/b974130c-6ea4-4ddf-89cf-e8b33c9e38b5)
+
 
 ## Why Choose TextUtils?
 
