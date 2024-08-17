@@ -21,7 +21,6 @@ export default function About({ mode }) {
     color: darkMode ? "white" : "#042743",
     backgroundColor: darkMode ? "#042743" : "white",
     border: darkMode ? "1px solid white" : "none",
-   
   };
 
   // const [myStyle, setMyStyle] = useState({
@@ -71,7 +70,7 @@ export default function About({ mode }) {
                 aria-controls="collapseOne"
                 style={myStyle}
               >
-               <strong>Analyze Your Text</strong> 
+                <strong>Analyze Your Text</strong>
               </button>
             </h2>
             <div
@@ -101,7 +100,7 @@ export default function About({ mode }) {
                 aria-controls="collapseTwo"
                 style={myStyle}
               >
-               <strong>Free to Use</strong> 
+                <strong>Free to Use</strong>
               </button>
             </h2>
             <div
@@ -131,7 +130,7 @@ export default function About({ mode }) {
                 aria-controls="collapseThree"
                 style={myStyle}
               >
-               <strong>Browser Compatible</strong> 
+                <strong>Browser Compatible</strong>
               </button>
             </h2>
             <div

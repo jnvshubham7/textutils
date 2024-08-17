@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from "react";
 
 const AboutUs = () => (
@@ -10,8 +7,8 @@ const AboutUs = () => (
       TextToolkit is your go-to platform for effortless text manipulation and
       analysis. Our user-friendly interface is equipped with a range of powerful
       tools to enhance your text in just a few clicks. Whether you're a writer,
-      student, or anyone dealing with text, TextToolkit simplifies your tasks and
-      boosts your productivity.
+      student, or anyone dealing with text, TextToolkit simplifies your tasks
+      and boosts your productivity.
     </p>
 
     <h2>Key Features:</h2>
@@ -25,8 +22,8 @@ const AboutUs = () => (
       <li>
         <strong>Clipboard Convenience:</strong> Copy your transformed text
         directly to the clipboard for quick and efficient use across various
-        applications. No more hassle with manual copying – TextToolkit streamlines
-        the process for you.
+        applications. No more hassle with manual copying – TextToolkit
+        streamlines the process for you.
       </li>
       <li>
         <strong>Text Clearing:</strong> Need a fresh start? Clear the text area
@@ -34,14 +31,14 @@ const AboutUs = () => (
         tasks.
       </li>
       <li>
-        <strong>Title Case Conversion:</strong> Convert your text to Title
-        Case, ensuring a professional and polished appearance. Perfect for
-        headings, titles, or any text where capitalization matters.
+        <strong>Title Case Conversion:</strong> Convert your text to Title Case,
+        ensuring a professional and polished appearance. Perfect for headings,
+        titles, or any text where capitalization matters.
       </li>
       <li>
         <strong>Speech Synthesis:</strong> Bring your text to life with our
-        Speech Synthesis feature. Simply click a button, and TextToolkit will read
-        your text aloud, adding an auditory dimension to your content.
+        Speech Synthesis feature. Simply click a button, and TextToolkit will
+        read your text aloud, adding an auditory dimension to your content.
       </li>
       <li>
         <strong>Space Management:</strong> Tidy up your text by removing extra

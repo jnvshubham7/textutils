@@ -6,7 +6,6 @@ import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-
 function App() {
   const [mode, setMode] = useState("light");
   //whether dark mode is enabled or not
@@ -38,14 +37,9 @@ function App() {
   };
 
   return (
-
-    
-
-
-    <Router> 
+    <Router>
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
-
 
       {/* exact is used to match the exact path
       if we don't use exact then it will match the path which starts with the given path
@@ -54,13 +48,9 @@ function App() {
       but if we use <Route exact path="/about" element={<About />} />
       then it will only match the path /about */}
 
-
-
       <div className="container">
         <Routes>
-          <Route exact path="/about" element={<About 
-          mode={mode}
-          />} />
+          <Route exact path="/about" element={<About mode={mode} />} />
           <Route
             exact
             path="/"
@@ -70,17 +60,11 @@ function App() {
                 mode={mode}
                 showAlert={showAlert}
               />
-
             }
-            />
-            </Routes>
-          </div>
-        </Router>
-
-    
-
-
-
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
