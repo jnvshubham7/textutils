@@ -27,18 +27,18 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#042743";
       showAlert("Dark mode has been enabled", "success");
-      // document.title = "TextUtils - Dark Mode";
+      // document.title = "TextToolkit - Dark Mode";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode has been enabled", "success");
-      // document.title = "TextUtils - Light Mode";
+      // document.title = "TextToolkit - Light Mode";
     }
   };
 
   return (
     <Router>
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+      <Navbar title="TextToolkit" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
 
       {/* exact is used to match the exact path
@@ -56,7 +56,7 @@ function App() {
             path="/"
             element={
               <TextForm
-                heading="Try TextUtils - word counter, character counter, remove extra spaces"
+                heading="Try TextToolkit - word counter, character counter, remove extra spaces"
                 mode={mode}
                 showAlert={showAlert}
               />
