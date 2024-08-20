@@ -1,25 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const DownloadPlaylist = () => {
-  const [url, setUrl] = useState('');
-  const [message, setMessage] = useState('');
+  const [url, setUrl] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleDownload = async () => {
-    try {
-      const response = await fetch('http://localhost:5000/download-playlist', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ playlistUrl: url }),
-      });
-
-      const data = await response.json();
-      setMessage(data.message);
-    } catch (error) {
-      setMessage('Error downloading playlist.');
-    }
-  };
+  function handleDownload(videoUrl) {
+    fetch("http://localhost:5000/download-video", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ url: videoUrl }), // Pass the actual URL
+    })
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", "audio.mp3"); // Optional: Set the file name
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+      })
+      .catch((err) => console.error("Error:", err));
+  }
 
   return (
     <div>
@@ -29,7 +33,7 @@ const DownloadPlaylist = () => {
         onChange={(e) => setUrl(e.target.value)}
         placeholder="Enter YouTube playlist URL"
       />
-      <button onClick={handleDownload}>Download Playlist</button>
+      <button onClick={() => handleDownload(url)}>Download Playlist</button> {/* Correctly pass the URL */}
       <p>{message}</p>
     </div>
   );
