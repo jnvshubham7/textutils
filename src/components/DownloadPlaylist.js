@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { 
-  Box, 
-  Input, 
-  Button, 
-  Text, 
   Container, 
+  Form, 
+  Button, 
   Spinner, 
-  Alert, 
-  AlertIcon 
-} from "@chakra-ui/react";
-import { DownloadIcon } from "@chakra-ui/icons";
+  Alert 
+} from "react-bootstrap";
+import { BsDownload } from "react-icons/bs";
 
 const DownloadPlaylist = () => {
   const [url, setUrl] = useState("");
@@ -46,31 +43,48 @@ const DownloadPlaylist = () => {
   };
 
   return (
-    <Container maxW="sm" mt="50px" textAlign="center">
-      <Text fontSize="2xl" mb="8px">
-        Download YouTube Playlist
-      </Text>
-      <Input
-        placeholder="Enter YouTube playlist URL"
-        value={url}
-        onChange={(e) => setUrl(e.target.value)}
-        mb="16px"
-        size="lg"
-      />
-      <Button
-        colorScheme="blue"
-        leftIcon={loading ? <Spinner size="sm" /> : <DownloadIcon />}
-        onClick={() => handleDownload(url)}
-        isDisabled={loading || !url}
-        size="lg"
-        width="100%"
-        mb="16px"
-      >
-        {loading ? "Downloading..." : "Download Playlist"}
-      </Button>
+    <Container className="mt-5" style={{ maxWidth: "400px" }}>
+      <h2 className="text-center mb-4">Download YouTube Playlist</h2>
+      <Form>
+        <Form.Group controlId="formBasicUrl" className="mb-3">
+          <Form.Control
+            type="url"
+            placeholder="Enter YouTube playlist URL"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            size="lg"
+          />
+        </Form.Group>
+        <Button
+          variant="primary"
+          className="w-100"
+          size="lg"
+          onClick={() => handleDownload(url)}
+          disabled={loading || !url}
+        >
+          {loading ? (
+            <>
+              <Spinner
+                as="span"
+                animation="border"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+              />{" "}
+              Downloading...
+            </>
+          ) : (
+            <>
+              <BsDownload /> Download Playlist
+            </>
+          )}
+        </Button>
+      </Form>
       {message && (
-        <Alert status={message.includes("successfully") ? "success" : "error"} mt="16px">
-          <AlertIcon />
+        <Alert
+          variant={message.includes("successfully") ? "success" : "danger"}
+          className="mt-4"
+        >
           {message}
         </Alert>
       )}
