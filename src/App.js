@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import DownloadPlaylist from "./components/DownloadPlaylist";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -62,8 +63,25 @@ function App() {
               />
             }
           />
+
+         
+          <Route
+            exact
+            path="/download-playlist"
+            element={<DownloadPlaylist />}  //render the DownloadPlaylist component
+          />
+
+
+
+        
+
+
         </Routes>
+
+
       </div>
+
+
     </Router>
   );
 }
