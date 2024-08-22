@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import DownloadPlaylist from "./components/DownloadPlaylist";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -28,25 +28,19 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#042743";
       showAlert("Dark mode has been enabled", "success");
-      // document.title = "TextUtils - Dark Mode";
+      // document.title = "TextToolkit - Dark Mode";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode has been enabled", "success");
-      // document.title = "TextUtils - Light Mode";
+      // document.title = "TextToolkit - Light Mode";
     }
   };
 
   return (
-
-    
-    <>
-
-
-    {/* <Router> */}
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+    <Router>
+      <Navbar title="TextToolkit" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
-
 
       {/* exact is used to match the exact path
       if we don't use exact then it will match the path which starts with the given path
@@ -55,37 +49,40 @@ function App() {
       but if we use <Route exact path="/about" element={<About />} />
       then it will only match the path /about */}
 
-
-
       <div className="container">
-        {/* <Routes>
-          <Route exact path="/about" element={<About 
-          mode={mode}
-          />} />
+        <Routes>
+          <Route exact path="/about" element={<About mode={mode} />} />
           <Route
             exact
             path="/"
-            element={ */}
+            element={
               <TextForm
-                heading="Try TextUtils - word counter, character counter, remove extra spaces"
+                heading="Try TextToolkit - word counter, character counter, remove extra spaces"
                 mode={mode}
                 showAlert={showAlert}
               />
+            }
+          />
 
-               </div>
-
-            {/* }
-            />
-            </Routes>
          
-        </Router> */}
+          <Route
+            exact
+            path="/download-playlist"
+            element={<DownloadPlaylist />}  //render the DownloadPlaylist component
+          />
 
-    </>
-
-    
 
 
+        
 
+
+        </Routes>
+
+
+      </div>
+
+
+    </Router>
   );
 }
 
